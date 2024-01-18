@@ -27,18 +27,26 @@ All python scripts include installation at beginning of all packages they requir
 The motivation behind this project was to allow for the classification of messages around disasters such as war and extreme weather events in terms of the reponse they require. This ensures that the help people recieve in situation such as this is both relevant and timely. The creation of pipelines in order to do this ensures that the process can be repeated and new data classified easily. A web app allows both new classifcations to be made easily for a non-technical user as well as providing visualisations on the training set and any limitations it may provide. 
 
 ## Files 
-Jupyter notebook including the code used to run the analysis: ProjectCode.ipynb
+Attached is a folder of python files which allow for the cleaning of data, the building of the machine learning model and the code needed to run the web app. Files of note within it are: 
 
+- "process_data.py" : code used to merge the two datasets and clean them.
+- "train_classifier" : code used to build a machine learning model.
+- "run.py" : the  code needed to run the web app.
 
-## Usage
-Download survey responses before use as stated in installation instructions. 
-Code is commented and split into clear sections to allow ease of use. All parts should-be self explanatory. All contributions are welcome using the existing files (or added more recent surveys) to allow further analysis and insights to be given.
+How to use these files is mentioned in the forthcoming [usage](#Usage)  section.
 
-## Author
+## Usage 
+In order to be able to use the above files and produce the web app. A number of steps should be followed on a IDE. To run the ETL pipeline for cleaning the data you enter 
+- "python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db"
+Then the followinbg command runs the Machine Learning model builder pipeline
+- "python models/train_classifier.py data/DisasterResponse.db models/classifier"
+The navigate to app directory and then run the run.py document to build a preview of the app.
 
-All code created by [Joshua Lindsay](https://github.com/josh-lindsay2023)
-Survey Responses taken from [StackOverflow](https://insights.stackoverflow.com/survey)
+## Authors
+
+All code created by [Joshua Lindsay](https://github.com/josh-lindsay2023) following a Udacity template. 
+Disaster Data taken from [Appen](https://appen.com/)
 
 ## Acknowledegments
 
-Thanks to StackOverflow for making this analysis possible via their surveys and responses. Thanks to UDACITY for helping me develop my coding and data science knowledge to carry out this analysis. 
+Thanks to StackOverflow for making this analysis possible via their disaster data. Thanks to UDACITY for helping me develop my coding and data science knowledge to carry out this analysis. 
