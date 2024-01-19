@@ -27,11 +27,11 @@ All python scripts include installation at beginning of all packages they requir
 The motivation behind this project was to allow for the classification of messages around disasters such as war and extreme weather events in terms of the reponse they require. This ensures that the help people recieve in situation such as this is both relevant and timely. The creation of pipelines in order to do this ensures that the process can be repeated and new data classified easily. A web app allows both new classifcations to be made easily for a non-technical user as well as providing visualisations on the training set and any limitations it may provide. 
 
 ## Files 
-Attached is a folder of python files which allow for the cleaning of data, the building of the machine learning model and the code needed to run the web app. Files of note within it are: 
+Attached are folders of python files which allow for the cleaning of data, the building of the machine learning model and the code needed to run the web app. Files of note within it are: 
 
-- "process_data.py" : code used to merge the two datasets and clean them.
-- "train_classifier" : code used to build a machine learning model.
-- "run.py" : the  code needed to run the web app.
+- "process_data.py" : code used to merge the two datasets and clean them. Stored within the data folder.
+- "train_classifier" : code used to build a machine learning model. Stored within the models folder.
+- "run.py" : the  code needed to run the web app. Stored within the app folder.
 
 How to use these files is mentioned in the forthcoming [usage](#Usage)  section.
 
