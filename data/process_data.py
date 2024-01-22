@@ -35,9 +35,10 @@ def clean_data(df):
         categories[column] = categories[column].apply(lambda x: re.sub(r'\D', '', str(x)))#strips the category names from each of the values to just leave the binary number 
         categories[column] = categories[column].astype(int) # ensures the bianry column is a integer. 
     df.drop(columns=["categories"], inplace= True)# drop the original category column
-   
+    
     df = pd.concat([df, categories], axis=1) # merge the newly made categories df with the original one. 
     df= df.drop_duplicates() # drop any duplicates in the datset.
+    df = df.drop(df[df['related'] == 2].index)
     return df
 
 def save_data(df, database_filename):
@@ -47,7 +48,7 @@ def save_data(df, database_filename):
     database_filename = what you want to call your new database
     '''
     engine = create_engine('sqlite:///' + database_filename)
-    df.to_sql(database_filename, engine, index=False) # saves the df in SQLite database 
+    df.to_sql(database_filename, engine, index=False, if_exists='replace') # saves the df in SQLite database 
     
   
 
