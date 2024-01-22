@@ -1,4 +1,3 @@
-
 #### import packages################
 import sys
 import pandas as pd
@@ -6,20 +5,18 @@ import re
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-   ''' A function for loading the required datasets and merging them into 1 using the shared id column 
-   Inputs: 
-   messages_filepath: allows us to access the messages database
-   categories_filepath : allows us to access the categories database
-   Outputs:
-   df: a merged dtabase of the two - on the id column
-   '''
-
-    #load two databases
-    messages= pd.read_csv(messages_filepath)
-    categories = pd.read_csv(categories_filepath)
+     ''' A function for loading the required datasets and merging them into 1 using the shared id column 
+     Inputs: 
+     messages_filepath: allows us to access the messages database
+     categories_filepath : allows us to access the categories database
+     Outputs:
+     df: a merged dtabase of the two - on the id column
+     '''
+     messages= pd.read_csv(messages_filepath)
+     categories = pd.read_csv(categories_filepath)
     # merge datasets
-    df = messages.merge(categories, on="id")
-    return df
+     df = messages.merge(categories, on="id")
+     return df
 
 
 def clean_data(df):
@@ -28,7 +25,7 @@ def clean_data(df):
     df = newly merged database
     outputs:
     df= cleaned databse
-    ''''
+    '''
     
     categories= df["categories"].str.split(";", expand= True)#split the category column on each semi colon (new variable
     row = categories.iloc[0] #allows us to extract the category names
@@ -83,3 +80,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
